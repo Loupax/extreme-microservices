@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  redis:
+    image: "redis"
+
+  router:
+    image: "nginx"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/njs/jwt.js:/etc/nginx/njs/jwt.js
+    ports:
+      - "8080:8080"
+    depends_on: ["guest_auth", "game_start"]
+
+  guest_auth:
+    image: "guest_authentication:local"
+  game_start:
+    image: "game_initialization:local"
+    depends_on: ["redis"]

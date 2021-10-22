@@ -1,7 +1,10 @@
 # extreme-microservices
 ## (Or what is the maximum level of granularity I can reach when building a web application)
 
-I catch myself repeating the same matra. The only meaningfully reusable unit of software is the binary itself. What if I put this idea to the test by doing the most extreme implementation possible?
+I catch myself repeating the same matra. 
+> The only meaningfully reusable unit of software is the binary itself. 
+
+What if I put this idea to the test by doing the most extreme implementation possible?
 
 Apparently I need to do some reading on the purpose of microservices, domain driven design and MVC in order to write a good preamble for that project so I will be efficient and won't bother for now. 
 
@@ -27,3 +30,7 @@ API clients will be able to:
 * Create game maps with multiple possible kinds of terrain, buildings and units of varying speeds, attack types an defense
 * Start battles between armies on those maps
 * Move units on the map and attack
+
+# Notes
+Each endpoint will need it's own Dockerfile, docker-compose service and nginx route.
+From those it looks like we can fully automate the Dockerfile creation and can scaffold the rest.
