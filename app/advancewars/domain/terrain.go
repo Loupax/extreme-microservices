@@ -1,19 +1,12 @@
 package domain
 
-type Terrain int
+type TerrainTile int
 
 const (
 	// Sea is only passable by units that have a Floating or Flying chassis
-	Sea Terrain = iota
+	Sea TerrainTile = iota
 	// Land is accessible by ground and flying units
 	Land
-)
-
-type Chassis int
-
-const (
-	Wheels Chassis = iota
-	Threads
-	Wings
-	BoatFrame
+	// Road has the smallest movement penalty for wheeled vehicles
+	Road
 )
