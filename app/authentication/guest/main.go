@@ -8,7 +8,7 @@ import (
 	"os"
 
 	"github.com/golang-jwt/jwt"
-	"github.com/loupax/extreme-microservices/domain"
+	"github.com/loupax/extreme-microservices/app/authentication/domain"
 )
 
 type guestClaims struct {

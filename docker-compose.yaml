@@ -10,10 +10,10 @@ services:
       - ./nginx/njs/jwt.js:/etc/nginx/njs/jwt.js
     ports:
       - "8080:8080"
-    depends_on: ["guest_auth", "game_start"]
+    depends_on: ["authentication_guest", "advancewars_battlemap_create"]
 
-  guest_auth:
-    image: "guest_authentication:local"
-  game_start:
-    image: "game_initialization:local"
+  authentication_guest:
+    image: "authentication_guest:local"
+  advancewars_battlemap_create:
+    image: "advancewars_battlemap_create:local"
     depends_on: ["redis"]

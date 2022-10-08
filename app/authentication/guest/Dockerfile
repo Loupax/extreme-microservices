@@ -2,7 +2,7 @@ FROM golang AS build
 WORKDIR /app
 COPY . . 
 RUN go mod download
-RUN go build /app/app/game/start/main.go 
+RUN go build /app/app/authentication/guest/main.go 
 
 FROM gcr.io/distroless/base
 COPY --from=build /app/main /
